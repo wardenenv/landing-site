@@ -1,6 +1,22 @@
-@@include("partials/head.html")
+<!doctype html>
+<html lang="en-us">
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Header -->
+    <title>Warden</title>
+    <meta name="description" content="Warden is a CLI utility for working with docker-compose environments">
+
+    <!-- The compiled CSS file -->
+    <link rel="stylesheet" href="css/production.css">
+
+    <!-- Web fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700|Source+Serif+Pro:700" rel="stylesheet">
+</head>
+<body>
+<!-- Header -->
     <header class="align--center pt3">
         <div class="container--lg border--bottom pb3">
             <pre class="warden-mark">
@@ -30,7 +46,7 @@ $ warden svc up
                     <p class="italic text--gray mb1">Two-command install and setup process makes getting started lightning fast. Works on macOS and Linux.</p>
                 </div>
                 <div class="grid-column mt3 mb2">
-                    <img class="box-shadow" src="/img/warden-example.png" alt="Warden Example">
+                    <img class="box-shadow" src="./img/warden-example.png" alt="Warden Example">
                 </div>
             </div>
 
@@ -39,10 +55,10 @@ $ warden svc up
                 <div class="grid-column mb2 order-2">
                     <div class="grid-row">
                         <div class="grid-column mb2 span-half align--center-on-mobile">
-                            <img class="half-width-on-mobile" src="/img/docker.svg" alt="Docker">
+                            <img class="half-width-on-mobile" src="./img/docker.svg" alt="Docker">
                         </div>
                         <div class="grid-column mb2 span-half align--center-on-mobile">
-                            <img class="half-width-on-mobile" src="/img/homebrew.png" alt="Homebrew">
+                            <img class="half-width-on-mobile" src="./img/homebrew.png" alt="Homebrew">
                         </div>
                     </div>
                 </div>
@@ -93,12 +109,14 @@ $ warden svc up
                 </div>
                 <div class="grid-column mt2 span-half align--right align--center-on-mobile">
                     <ul class="no-bullets list--inline order-1">
-                        <li class="mr1"><a href="https://github.com/davidalger/warden" class="link"><img class="icon" src="/img/github.svg" alt="Github"></a></li>
-                        <li class="mr1"><a href="https://twitter.com/blackbooker" target="_blank" class="link"><img class="icon" src="/img/twitter.svg" alt="Twitter"></a></li>
+                        <li class="mr1"><a href="https://github.com/davidalger/warden" class="link"><img class="icon" src="./img/github.svg" alt="Github"></a></li>
+                        <li class="mr1"><a href="https://twitter.com/blackbooker" target="_blank" class="link"><img class="icon" src="./img/twitter.svg" alt="Twitter"></a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </footer>
 
-@@include("partials/foot.html")
+</body>
+</html>
+

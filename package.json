@@ -1,21 +1,8 @@
 {
-    "devDependencies": {
-        "gulp": "^3.0",
-        "gulp-autoprefixer": "*",
-        "gulp-clean-css": "*",
-        "gulp-combine-mq": "*",
-        "gulp-concat": "*",
-        "gulp-file-include": "*",
-        "gulp-htmlmin": "*",
-        "gulp-imagemin": "*",
-        "gulp-plumber": "*",
-        "gulp-rename": "*",
-        "gulp-sass": "*",
-        "gulp-size": "*",
-        "gulp-uglify": "*",
-        "gulp-util": "*",
-        "gulp-watch": "*",
-        "browser-sync": "*",
-        "glob": "*"
-    }
+  "dependencies": {
+    "node-sass": "^8.0.0"
+  },
+  "scripts": {
+    "build": "node-sass --output-style compressed src/scss/main.scss > src/raw/css/production.css"
+  }
 }
