@@ -84,6 +84,43 @@ $ warden svc up
             </div>
 
             <div class="grid-row">
+                <div class="grid-column mt3 mb2">
+                    <h2>How It Works</h2>
+                    <p class="mb1">Warden runs three layers of services on your development machine: host tools, shared global Docker services, and isolated per-project services.</p>
+                    <pre class="mermaid">
+flowchart TB
+    classDef default fill:#ffffff,stroke:#3f51b5,stroke-width:1.5px,color:#000000,font-weight:bold,font-size:12px;
+
+    subgraph DevSys ["Developer's System"]
+        direction TB
+
+        subgraph Host ["Host Services"]
+            direction LR
+            h1["Warden CLI"] ~~~ h2["Docker Engine"] ~~~ h3["Mutagen File Sync"] ~~~ h4["Trusted SSL Root CA"]
+        end
+
+        subgraph Global ["Global Docker Services — warden svc up"]
+            direction LR
+            g1["Traefik&lt;br&gt;Reverse Proxy + SSL"] ~~~ g2["DNSmasq"] ~~~ g3["Mailpit&lt;br&gt;Email Catcher"] ~~~ g4["SSH Tunnel"] ~~~ g5["phpMyAdmin"] ~~~ g6["Portainer"]
+        end
+
+        subgraph Project ["Per-Project Docker Services — warden env up"]
+            direction LR
+            p1["Nginx"] ~~~ p2["PHP-FPM"] ~~~ p3["MariaDB / MySQL"] ~~~ p4["Redis / Valkey"] ~~~ p5["Elasticsearch /&lt;br&gt;OpenSearch"] ~~~ p6["RabbitMQ"] ~~~ p7["Varnish"]
+        end
+
+        Host ~~~ Global ~~~ Project
+    end
+
+    style DevSys fill:#f5f5f5,stroke:#666666,stroke-width:1px,rx:8,ry:8
+    style Host fill:transparent,stroke:none
+    style Global fill:#fff3e0,stroke:#FF9800,stroke-width:1px,rx:8,ry:8
+    style Project fill:#e8f5e9,stroke:#4CAF50,stroke-width:1px,stroke-dasharray: 5 5,rx:8,ry:8
+                    </pre>
+                </div>
+            </div>
+
+            <div class="grid-row">
                 <div class="grid-column mt2 mb2">
                     <h2>Feature List</h2>
                     <ul class="list--indented">
@@ -148,6 +185,10 @@ $ warden svc up
         </div>
     </footer>
 
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+</script>
 </body>
 </html>
 
